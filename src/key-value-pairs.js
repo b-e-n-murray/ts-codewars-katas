@@ -7,14 +7,12 @@ Given the following object as input, */
 const characters = {
   Bruce: "Hulk",
   Peter: "Spiderman",
-  Ororo: "Storm"
+  Ororo: "Storm",
 };
 
-function printAllKeyValuePairs(characters)  {
-    for (let key in characters)  {
-        console.log(key, characters[key]);
-    }
+function printAllKeyValuePairs(characters) {
+  for (let key in characters) {
+    console.log(key, characters[key]);
+  }
 }
-console.log(printAllKeyValuePairs(characters))
-
-
+console.log(printAllKeyValuePairs(characters));

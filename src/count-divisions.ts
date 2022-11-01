@@ -21,13 +21,13 @@
  * @param n - input number always greater than 0
  * @returns a number
  */
- function roughLog2(n: number): number {
-    let count : number = 0;
-    while (n % 2 === 0){
-      n = n/2
-      count ++
-    }
-    return count;
+function roughLog2(n: number): number {
+  let count: number = 0;
+  while (n % 2 === 0) {
+    n = n / 2;
+    count++;
   }
-  
-  export default roughLog2;
+  return count;
+}
+
+export default roughLog2;
