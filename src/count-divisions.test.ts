@@ -1,10 +1,10 @@
 import roughLog2 from "./count-divisions";
 
 // delete the ".skip"
-test("odd number", () => {
+test.skip("odd number", () => {
   expect(roughLog2(3)).toBe(0);
 });
 
-test("even number", () => {
+test.skip("even number", () => {
   expect(roughLog2(64)).toBe(6);
 });

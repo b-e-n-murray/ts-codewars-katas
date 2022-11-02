@@ -1,6 +1,5 @@
 function isValidIP(ipAddress: string):boolean {
   let splitAddress = ipAddress.split(".");
-  // console.log("Split address: ", splitAddress);
 
   if (
     checkLengthValidity(splitAddress) &&
@@ -16,10 +15,7 @@ function isValidIP(ipAddress: string):boolean {
 
 function checkForZeros(splitAddress:string[]):boolean {
   for (let value of splitAddress) {
-    //console.log("length:", value.length) //Length of the current string
-    //     console.log("value.length != 1 returns:", value.length != 1)
     if (value.charAt(0) === "0" && value.length != 1) {
-      //if the character at the first index is 0 AND there are numbers after the 0 then... 023.1.1.1
       return false;
     }
   }
@@ -33,12 +29,10 @@ function checkRange(splitAddress:string[]):boolean {
     if (!number.includes("e")) {
       convertedString.push(Number(number));
     }
-    if (number.includes("e")) {
+    if (number.includes("e") || number.includes("\n")) {
       convertedString.push(NaN);
     }
   }
-
-  console.log("Converted string:", convertedString);
 
   if (convertedString.includes(NaN)) {
     return false;

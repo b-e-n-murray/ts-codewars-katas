@@ -27,3 +27,7 @@ test("mixed inputs including e", () => {
 test("vacant value", () => {
   expect(isValidIP("27.196..140")).toBe(false);
 });
+test("includes backslash n", () => {
+  expect(isValidIP("1.2.3.4\n       ")).toBe(false);
+})
+
