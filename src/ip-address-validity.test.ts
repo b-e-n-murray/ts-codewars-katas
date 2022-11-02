@@ -1,7 +1,7 @@
 import isValidIP from "./ip-address-validity";
 
 test("all zeros", () => {
-  expect(isValidIP("0.0.0.0")).toStrictEqual(true);
+  expect(isValidIP("0.0.0.0")).toBe(true);
 });
 test("empty character", () => {
   expect(isValidIP(" 1.2.3.4")).toBe(false);
@@ -10,7 +10,7 @@ test("only three values", () => {
   expect(isValidIP("222.1.13")).toBe(false);
 });
 test("first character zero", () => {
-  expect(isValidIP("023. 250.024.13")).toBe(false);
+  expect(isValidIP("023.250.024.13")).toBe(false);
 });
 test("all zeros", () => {
   expect(isValidIP("0.0.0.0")).toBe(true);
