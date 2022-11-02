@@ -5,6 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["DOM", "ES2016", "ES2017"],
     "target": "es6",
+    "outDir": "dist",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
