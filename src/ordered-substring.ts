@@ -13,14 +13,25 @@ PARAMS:
     Create a new variable, a number, call it INDEX
     Create a new variable, an empty array of strings, call it SUBSTRING_ARRAY
     Set INDEX to 0
-    Set CURRENT to thr string at index [INDEX] of ARRAY1
+    Set CURRENT to the string at index [INDEX] of ARRAY1
     FOR   each STRING of ARRAY2
     IF    STRING includes CURRENT 
     push CURRENT into SUBSTRING_ARRAY
     increase INDEX by 1
     ENDIF.
     ENDFOR.
-    return SUBSTRING_ARRAY ordered alphabetically      
-*/
-function inArray(array1,array2){
+    return SUBSTRING_ARRAY ordered alphabetically
+    ==================================================== */
+function inArray(array1,array2)  {
+    let index: number = 0
+    let current: string = array1[index]
+    let substringArray: string[] = []
+        for(let string of array2)  {
+            if(string.includes(current) && !substringArray.includes(current))  {
+                substringArray.push(current)
+                index++
+            }
+        }
+return substringArray.sort()
 }
+export default inArray;
