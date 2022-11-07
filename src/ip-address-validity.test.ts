@@ -29,5 +29,4 @@ test.skip("vacant value", () => {
 });
 test.skip("includes backslash n", () => {
   expect(isValidIP("1.2.3.4\n       ")).toBe(false);
-})
-
+});

@@ -22,16 +22,15 @@ PARAMS:
     ENDFOR.
     return SUBSTRING_ARRAY ordered alphabetically
     ==================================================== */
-function inArray(array1,array2)  {
-    let index: number = 0
-    let current: string = array1[index]
-    let substringArray: string[] = []
-        for(let string of array2)  {
-            if(string.includes(current) && !substringArray.includes(current))  {
-                substringArray.push(current)
-                index++
-            }
-        }
-return substringArray.sort()
+function inArray(array1, array2) {
+  let substringArray: string[] = [];
+  for (let word of array1) {
+    for (let string of array2) {
+      if (string.includes(word) && !substringArray.includes(word)) {
+        substringArray.push(word);
+      }
+    }
+  }
+  return substringArray.sort();
 }
 export default inArray;

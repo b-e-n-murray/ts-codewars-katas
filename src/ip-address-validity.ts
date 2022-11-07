@@ -1,4 +1,4 @@
-function isValidIP(ipAddress: string):boolean {
+function isValidIP(ipAddress: string): boolean {
   let splitAddress = ipAddress.split(".");
 
   if (
@@ -13,16 +13,16 @@ function isValidIP(ipAddress: string):boolean {
   }
 }
 
-function checkForZeros(splitAddress:string[]):boolean {
+function checkForZeros(splitAddress: string[]): boolean {
   for (let value of splitAddress) {
     if (value.charAt(0) === "0" && value.length != 1) {
       return false;
     }
   }
-  return true
+  return true;
 }
 
-function checkRange(splitAddress:string[]):boolean {
+function checkRange(splitAddress: string[]): boolean {
   let convertedString = [];
 
   for (let number of splitAddress) {
@@ -42,10 +42,10 @@ function checkRange(splitAddress:string[]):boolean {
       return false;
     }
   }
-  return true
+  return true;
 }
 
-function checkLengthValidity(splitAddress:string[]):boolean {
+function checkLengthValidity(splitAddress: string[]): boolean {
   if (
     splitAddress.length == 4 &&
     !splitAddress.includes("") &&
@@ -53,16 +53,16 @@ function checkLengthValidity(splitAddress:string[]):boolean {
   ) {
     return true;
   }
-  return false
+  return false;
 }
 
-function checkForSpaces(ipAddress:string):boolean {
+function checkForSpaces(ipAddress: string): boolean {
   ipAddress.split("");
   console.log(ipAddress);
   if (ipAddress.includes(" ")) {
     return false;
   }
-  return true
+  return true;
 }
 
 export default isValidIP;
