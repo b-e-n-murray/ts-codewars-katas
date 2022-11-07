@@ -22,7 +22,7 @@ PARAMS:
     ENDFOR.
     return SUBSTRING_ARRAY ordered alphabetically
     ==================================================== */
-function inArray(array1, array2) {
+function inArray(array1: string[], array2: string[]) {
   let substringArray: string[] = [];
   for (let word of array1) {
     for (let string of array2) {

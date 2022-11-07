@@ -1,6 +1,6 @@
 import inArray from "./ordered-substring";
 
-test("conatins two, no rearrangement", () => {
+test("contains two, no rearrangement", () => {
   expect(
     inArray(
       ["xyz", "live", "strong"],
