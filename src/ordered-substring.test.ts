@@ -1,11 +1,11 @@
 import inArray from "./ordered-substring";
 
-test("conatins two, no rearrangement", () => {
+test("contains two, no rearrangement", () => {
   expect(
     inArray(
       ["xyz", "live", "strong"],
       ["lively", "alive", "harp", "sharp", "armstrong"]
-    ).toStrictEqual(expect.arrayContaining(["live", "strong"]))
+    ).toBe(expect.arrayContaining(["live", "strong"]))
   );
 });
 test("contains three, with rearrangement", () => {
