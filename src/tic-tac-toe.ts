@@ -69,81 +69,68 @@ ELSE IF     IS_FINISHED returns false && CHECK_FOR_ROW_WIN returns false &&
                                                 return "The game is unfinished"
 ========================== */
 function checkForRowWin(boardState: string[]): string {
-    let winner = "false"
+  let winner = "false";
 
-    if (boardState[0] && boardState[1] && boardState[2] === ("X" || "O")) {
-        winner = boardState[0];
-    }
-    if (boardState[3] && boardState[4] && boardState[5] === ("X" || "O")) {
-        winner = boardState[3];
-    }
-    if (boardState[6] && boardState[7] && boardState[8] === ("X" || "O")) {
-        winner = boardState[6];
-    }
-    return winner
+  if (boardState[0] && boardState[1] && boardState[2] === ("X" || "O")) {
+    winner = boardState[0];
+  }
+  if (boardState[3] && boardState[4] && boardState[5] === ("X" || "O")) {
+    winner = boardState[3];
+  }
+  if (boardState[6] && boardState[7] && boardState[8] === ("X" || "O")) {
+    winner = boardState[6];
+  }
+  return winner;
 }
 function checkForDiagWin(boardState: string[]): string {
-    let winner = "false"
+  let winner = "false";
 
-    if (boardState[0] && boardState[4] && boardState[8] === ("X" || "O")) {
-        winner = boardState[0];
-    }
-    if (boardState[2] && boardState[4] && boardState[6] === ("X" || "O")) {
-        winner = boardState[3];
-    }
-    return winner
+  if (boardState[0] && boardState[4] && boardState[8] === ("X" || "O")) {
+    winner = boardState[0];
+  }
+  if (boardState[2] && boardState[4] && boardState[6] === ("X" || "O")) {
+    winner = boardState[3];
+  }
+  return winner;
 }
 function checkForColWin(boardState: string[]): string {
-    let winner = "false"
+  let winner = "false";
 
-    if (boardState[0] && boardState[3] && boardState[6] === ("X" || "O")) {
-        winner = boardState[0];
-    }
-    if (boardState[1] && boardState[4] && boardState[7] === ("X" || "O")) {
-        winner = boardState[3];
-    }
-    if (boardState[2] && boardState[5] && boardState[8] === ("X" || "O")) {
-        winner = boardState[3];
-    }
-    return winner
+  if (boardState[0] && boardState[3] && boardState[6] === ("X" || "O")) {
+    winner = boardState[0];
+  }
+  if (boardState[1] && boardState[4] && boardState[7] === ("X" || "O")) {
+    winner = boardState[3];
+  }
+  if (boardState[2] && boardState[5] && boardState[8] === ("X" || "O")) {
+    winner = boardState[3];
+  }
+  return winner;
 }
 
 function isFinished(boardState: string[]): string {
-    if(boardState.includes("")) {
-        return "unfinished"
-    }
-    else return "draw"
+  if (boardState.includes("")) {
+    return "unfinished";
+  } else return "draw";
 }
-
 
 function calcWinState(boardState: string[]): string {
-    let winState = ""
-    
-    if (checkForRowWin(boardState) !== "false") {
-        winState = checkForRowWin(boardState)
-    }
-    if (checkForDiagWin(boardState) !== "false") {
-        winState = checkForDiagWin(boardState)
-    }
-    if (checkForColWin(boardState) !== "false") {
-        winState = checkForColWin(boardState)
-    }
-    if(winState = "" /*there has been no win*/ ) {
-        winState = isFinished(boardState)
-    }
-    
-    return winState
+  let winState = "";
+
+  if (checkForRowWin(boardState) !== "false") {
+    winState = checkForRowWin(boardState);
+  }
+  if (checkForDiagWin(boardState) !== "false") {
+    winState = checkForDiagWin(boardState);
+  }
+  if (checkForColWin(boardState) !== "false") {
+    winState = checkForColWin(boardState);
+  }
+  if (winState === "" /*there has been no win*/) {
+    winState = isFinished(boardState);
+  }
+
+  return winState;
 }
 
-console.log(calcWinState(["x", "x", "x", "", "", "O", "O", "", ""]))
-
-
-
-
-
-
-
-
-
-
-
+console.log(calcWinState(["x", "x", "x", "", "", "O", "O", "", ""]));

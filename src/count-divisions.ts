@@ -22,7 +22,7 @@
  * @returns a number
  */
 function roughLog2(n: number): number {
-  let count: number = 0;
+  let count = 0;
   while (n % 2 === 0) {
     n = n / 2;
     count++;

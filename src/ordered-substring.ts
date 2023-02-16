@@ -23,9 +23,9 @@ PARAMS:
     return SUBSTRING_ARRAY ordered alphabetically
     ==================================================== */
 function inArray(array1: string[], array2: string[]) {
-  let substringArray: string[] = [];
-  for (let word of array1) {
-    for (let string of array2) {
+  const substringArray: string[] = [];
+  for (const word of array1) {
+    for (const string of array2) {
       if (string.includes(word) && !substringArray.includes(word)) {
         substringArray.push(word);
       }

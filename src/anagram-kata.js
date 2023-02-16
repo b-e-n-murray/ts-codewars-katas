@@ -49,47 +49,39 @@ FOR     each key of stringAObject
 ENDFOR
 ================== */
 
-function isAnagram(stringA, stringB){
-    if (stringA.length !== stringB.length){
-        return false
-    }
-    const stringAObject = countLetters(stringA) // {y: 3, i: 4} example
-    const stringBObject = countLetters(stringB) // {i: 4, y: 3} example
+function isAnagram(stringA, stringB) {
+  if (stringA.length !== stringB.length) {
+    return false;
+  }
+  const stringAObject = countLetters(stringA); // {y: 3, i: 4} example
+  const stringBObject = countLetters(stringB); // {i: 4, y: 3} example
 
-    return areEqual(stringAObject, stringBObject)
+  return areEqual(stringAObject, stringBObject);
 }
-console.log(isAnagram('abc', 'cba'))
+console.log(isAnagram("abc", "cba"));
 
 // helper function
-function countLetters(string){
-    const stringObject = {}
-    for (let letter of string){
-        if (stringObject.hasOwnProperty(letter) === false){ //or key in object
-            stringObject[letter] = 1 
-        }
-        else{
-            stringObject[letter] ++
-        }
+function countLetters(string) {
+  const stringObject = {};
+  for (let letter of string) {
+    if (stringObject.letter === undefined) {
+      //or key in object
+      stringObject[letter] = 1;
+    } else {
+      stringObject[letter]++;
     }
-    return stringObject
+  }
+  return stringObject;
 }
-// helper function 2 
-function areEqual(stringAObject, stringBObject){
-    for (let key in stringAObject){
-        if (!stringBObject[key]){
-            return false
-        }
-        if (stringAObject.key !== stringBObject.key){
-            return false
-        }
+// helper function 2
+function areEqual(stringAObject, stringBObject) {
+  for (let key in stringAObject) {
+    if (!stringBObject[key]) {
+      return false;
     }
-    return true
+    if (stringAObject.key !== stringBObject.key) {
+      return false;
+    }
+  }
+  return true;
 }
-
-
-
-
-
-
-
-

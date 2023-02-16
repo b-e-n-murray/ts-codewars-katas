@@ -1,5 +1,5 @@
 function isValidIP(ipAddress: string): boolean {
-  let splitAddress = ipAddress.split(".");
+  const splitAddress = ipAddress.split(".");
 
   if (
     checkLengthValidity(splitAddress) &&
@@ -14,7 +14,7 @@ function isValidIP(ipAddress: string): boolean {
 }
 
 function checkForZeros(splitAddress: string[]): boolean {
-  for (let value of splitAddress) {
+  for (const value of splitAddress) {
     if (value.charAt(0) === "0" && value.length != 1) {
       return false;
     }
@@ -23,9 +23,9 @@ function checkForZeros(splitAddress: string[]): boolean {
 }
 
 function checkRange(splitAddress: string[]): boolean {
-  let convertedString = [];
+  const convertedString = [];
 
-  for (let number of splitAddress) {
+  for (const number of splitAddress) {
     if (!number.includes("e")) {
       convertedString.push(Number(number));
     }
@@ -37,7 +37,7 @@ function checkRange(splitAddress: string[]): boolean {
   if (convertedString.includes(NaN)) {
     return false;
   }
-  for (let term of convertedString) {
+  for (const term of convertedString) {
     if (term < 0 || term > 255) {
       return false;
     }

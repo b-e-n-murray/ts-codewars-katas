@@ -5,22 +5,24 @@ test("contains two, no rearrangement", () => {
     inArray(
       ["xyz", "live", "strong"],
       ["lively", "alive", "harp", "sharp", "armstrong"]
-    ).toBe(expect.arrayContaining(["live", "strong"]))
-  );
+    )
+  ).toBe(["live", "strong"]);
 });
+
 test("contains three, with rearrangement", () => {
   expect(
     inArray(
       ["live", "strong", "arp"],
       ["lively", "alive", "harp", "sharp", "armstrong"]
-    ).toBe(["arp", "live", "strong"])
-  );
+    )
+  ).toBe(["arp", "live", "strong"]);
 });
+
 test("contains no substrings", () => {
   expect(
     inArray(
       ["tarp", "mice", "bull"],
       ["lively", "alive", "harp", "sharp", "armstrong"]
-    ).toBe([])
-  );
+    )
+  ).toBe([]);
 });

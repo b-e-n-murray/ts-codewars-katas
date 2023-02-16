@@ -1,32 +1,31 @@
-
 for (let i = 10; i <= 100000000; i *= 10) {
-    const inputArray = prepareYourInputArray(i);
-    const startTime = performance.now();
-    removeWithShift(inputArray);
-    const stopTime = performance.now();
-    const elapsedTime = stopTime - startTime;
-    console.log(i, elapsedTime);
+  const inputArray = prepareYourInputArray(i);
+  const startTime = performance.now();
+  removeWithShift(inputArray);
+  const stopTime = performance.now();
+  const elapsedTime = stopTime - startTime;
+  console.log(i, elapsedTime);
 }
 
 function prepareYourInputArray(num) {
-    let preparedArr = []
-    for (let i = 0; i < num; i++) {
-        preparedArr.push(i)
-    }
-    return preparedArr
+  let preparedArr = [];
+  for (let i = 0; i < num; i++) {
+    preparedArr.push(i);
+  }
+  return preparedArr;
 }
 
 function appendWithUnshift(inputArray) {
-    return inputArray.unshift(1)
+  return inputArray.unshift(1);
 }
 function appendWithPush(inputArray) {
-    return inputArray.push(1)
+  return inputArray.push(1);
 }
 function removeWithPop(inputArray) {
-    return inputArray.pop()
+  return inputArray.pop();
 }
 function removeWithShift(inputArray) {
-    return inputArray.shift()
+  return inputArray.shift();
 }
 /*## Task
 Measure how long it takes to `array.push` a number onto an array of the following lengths.  
