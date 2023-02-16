@@ -1,2 +1,2 @@
-# <h1>Katas from https://www.codewars.com</h1>
+# <h3>Katas from https://www.codewars.com</h3>
 
